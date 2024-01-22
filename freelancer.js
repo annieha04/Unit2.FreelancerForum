@@ -7,6 +7,8 @@
 // The average starting price is updated to $50.
 // New freelancers continue to appear every few seconds, and the average starting price is updated accordingly.
 
+document.addEventListener('DOMContentLoaded', function () {
+
 const freelancers = [
     { name: 'Alice', occupation: 'Writer', startingPrice: 30 },
     { name: 'Bob', occupation: 'Teacher', startingPrice: 50 },
@@ -61,3 +63,4 @@ function calculateAveragePrice(freelancers) {
     const newFreelancer = { name: 'Carol', occupation: 'Programmer', startingPrice: Math.floor(Math.random() * 100) + 1 };
     updateListAndAverage(newFreelancer);
   }, 5000); // Update every 5 seconds
+});
