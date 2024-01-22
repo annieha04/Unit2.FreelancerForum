@@ -16,4 +16,18 @@ function calculateAveragePrice(freelancers) {
     const totalPrices = freelancers.reduce((sum, freelancer) => sum + freelancer.startingPrice, 0);
     return freelancers.length === 0 ? 0 : totalPrices / freelancers.length;
   }
-  
+
+function updateListAndAverage(newFreelancer) {
+freelancers.push(newFreelancer);
+    console.log('Freelancers List:');
+freelancers.forEach(freelancer => {
+      console.log(`${freelancer.name} - ${freelancer.occupation}, Starting Price: $${freelancer.startingPrice}`);
+});
+const averagePrice = calculateAveragePrice(freelancers);
+    console.log(`Average Starting Price: $${averagePrice.toFixed(2)}`);
+  }
+
+setInterval(() => {
+    const newFreelancer = { name: 'Carol', occupation: 'Programmer', startingPrice: Math.floor(Math.random() * 100) + 1 };
+    updateListAndAverage(newFreelancer);
+  }, 5000); // Update every 5 seconds
