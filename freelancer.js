@@ -26,33 +26,29 @@ function calculateAveragePrice(freelancers) {
     return freelancers.length === 0 ? 0 : totalPrices / freelancers.length;
   }
   
-  // Function to update the freelancers list and average price
-  function updateListAndAverage(newFreelancer) {
+// Function to update the freelancers list and average price
+function updateListAndAverage(newFreelancer) {
     freelancers.push(newFreelancer);
   
-    // Display only the first two freelancers
+// Display only the first two freelancers
     const displayFreelancers = freelancers.slice(0, 2);
   
-    // Update the freelancers list
+// Update the freelancers list
     const freelancersList = document.getElementById('freelancers-list');
-    freelancersList.innerHTML = '';
+// Clear existing list items
+    while (freelancersList.firstChild) {
+      freelancersList.removeChild(freelancersList.firstChild);
+    }
+  
+// Append new list items
     displayFreelancers.forEach(freelancer => {
       const listItem = document.createElement('li');
       listItem.textContent = `${freelancer.name} - ${freelancer.occupation}, Starting Price: $${freelancer.startingPrice}`;
       freelancersList.appendChild(listItem);
     });
   
-    // Update the average starting price
+// Update the average starting price
     const averagePriceElement = document.getElementById('average-price');
     const averagePrice = calculateAveragePrice(displayFreelancers);
     averagePriceElement.textContent = `Average Starting Price: $${averagePrice.toFixed(2)}`;
-  }
-  
-  // Initial display
-  updateListAndAverage();
-  
-  // Simulate the arrival of new freelancers (you can replace this with actual data)
-  setInterval(() => {
-    const newFreelancer = { name: 'Carol', occupation: 'Programmer', startingPrice: Math.floor(Math.random() * 100) + 1 };
-    updateListAndAverage(newFreelancer);
-  }, 5000); // Update every 5 seconds
+  }  
