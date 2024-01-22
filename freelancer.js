@@ -12,7 +12,7 @@ const freelancers = [
     { name: 'Bob', occupation: 'Teacher', startingPrice: 50 },
   ];
 
-function calculateAveragePrice(freelancers) {
+  function calculateAveragePrice(freelancers) {
     const totalPrices = freelancers.reduce((sum, freelancer) => sum + freelancer.startingPrice, 0);
     return freelancers.length === 0 ? 0 : totalPrices / freelancers.length;
   }
