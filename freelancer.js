@@ -34,7 +34,6 @@ const freelancers = [
 
     // Update the freelancers list
     const freelancersList = document.getElementById('freelancers-list');
-    // Clear existing list items
     freelancersList.innerHTML = '';
 
     // Append list items for all freelancers
