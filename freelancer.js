@@ -22,8 +22,8 @@ const freelancers = [
     { name: 'Sam', occupation: 'Mechanic', startingPrice: 50 },
   ];
 
-   // Function to calculate average starting price
-   function calculateAveragePrice(freelancers) {
+  // Function to calculate average starting price
+  function calculateAveragePrice(freelancers) {
     const totalPrices = freelancers.reduce((sum, freelancer) => sum + freelancer.startingPrice, 0);
     return freelancers.length === 0 ? 0 : totalPrices / freelancers.length;
   }
@@ -39,8 +39,14 @@ const freelancers = [
     // Append list items for all freelancers
     freelancers.forEach(freelancer => {
       const listItem = document.createElement('li');
-      listItem.textContent = `${freelancer.name} - ${freelancer.occupation}, Starting Price: $${freelancer.startingPrice}`;
-      freelancersList.appendChild(listItem);
+
+      // Check if the expected properties are present
+      if (freelancer.name && freelancer.occupation && freelancer.startingPrice !== undefined) {
+        listItem.textContent = `${freelancer.name} - ${freelancer.occupation}, Starting Price: $${freelancer.startingPrice}`;
+        freelancersList.appendChild(listItem);
+      } else {
+        console.error('Invalid freelancer data:', freelancer);
+      }
     });
 
     // Update the average starting price
