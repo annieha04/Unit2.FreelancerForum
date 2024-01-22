@@ -20,8 +20,8 @@ const freelancers = [
     { name: 'Sam', occupation: 'Mechanic', startingPrice: 50 },
   ];
   
-  // Function to calculate average starting price
-  function calculateAveragePrice(freelancers) {
+ // Function to calculate average starting price
+function calculateAveragePrice(freelancers) {
     const totalPrices = freelancers.reduce((sum, freelancer) => sum + freelancer.startingPrice, 0);
     return freelancers.length === 0 ? 0 : totalPrices / freelancers.length;
   }
@@ -56,4 +56,3 @@ const freelancers = [
     const newFreelancer = { name: 'Carol', occupation: 'Programmer', startingPrice: Math.floor(Math.random() * 100) + 1 };
     updateListAndAverage(newFreelancer);
   }, 5000); // Update every 5 seconds
-  
