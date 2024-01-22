@@ -10,6 +10,14 @@
 const freelancers = [
     { name: 'Alice', occupation: 'Writer', startingPrice: 30 },
     { name: 'Bob', occupation: 'Teacher', startingPrice: 50 },
+    { name: 'Carol', occupation: 'Programmer', startingPrice: 70 },
+    { name: 'John', occupation: 'Chef', startingPrice: 90 },
+    { name: 'Thomas', occupation: 'Professional Football Player', startingPrice: 110 },
+    { name: 'Linda', occupation: 'Accountant', startingPrice: 130 },
+    { name: 'Nancy', occupation: 'Doctor', startingPrice: 150 },
+    { name: 'Tyler', occupation: 'Cashier', startingPrice: 15 },
+    { name: 'Helen', occupation: 'Bartender', startingPrice: 60 },
+    { name: 'Sam', occupation: 'Mechanic', startingPrice: 50 },
   ];
 
   function calculateAveragePrice(freelancers) {
